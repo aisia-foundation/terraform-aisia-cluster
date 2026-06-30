@@ -1,5 +1,7 @@
 # terraform-aisia-cluster
 
+[![Terraform Registry](https://img.shields.io/badge/Terraform%20Registry-terraform-aisia-cluster-7B42BC?logo=terraform)](https://registry.terraform.io/modules/aisia-foundation/cluster/aisia/latest) [![License: MPL-2.0](https://img.shields.io/badge/License-MPL--2.0-brightgreen.svg)](LICENSE)
+
 Module Terraform pour déployer **AISIA** (orchestration IA souveraine, local-first,
 multi-providers) sur un cluster **Kubernetes existant** — cloud-agnostique
 (EKS / AKS / GKE / Kapsule / OVH Managed K8s / on-premise). Couvre le
@@ -25,7 +27,7 @@ Publié sur le Terraform Registry sous `terraform-kubernetes-aisia`.
 
 ```hcl
 module "aisia" {
-  source  = "AISIA-fr/aisia/kubernetes"
+  source  = "aisia-foundation/cluster/aisia"
   version = "~> 1.0"
 
   image_tag          = "v6.9.61"
