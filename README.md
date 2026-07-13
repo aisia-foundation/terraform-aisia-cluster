@@ -1,12 +1,43 @@
+<!-- GENERATED:09_publications:start -->
+<!--
+  GÉNÉRÉ — ne pas éditer à la main.
+  Source: scripts/generate/09_publications.py
+  Régénérer: python3 scripts/aisia.py regen
+  Gate deploy: python3 scripts/release/deploy.py <ver> --mode docs
+-->
+
 # terraform-aisia-cluster
 
-[![Terraform Registry](https://img.shields.io/badge/Terraform%20Registry-terraform-aisia-cluster-7B42BC?logo=terraform)](https://registry.terraform.io/modules/aisia-foundation/cluster/aisia/latest) [![License: MPL-2.0](https://img.shields.io/badge/License-MPL--2.0-brightgreen.svg)](LICENSE)
+> **v6.12.23** — module cœur — déployer AISIA sur Kubernetes existant
 
-Module Terraform pour déployer **AISIA** (orchestration IA souveraine, local-first,
-multi-providers) sur un cluster **Kubernetes existant** — cloud-agnostique
-(EKS / AKS / GKE / Kapsule / OVH Managed K8s / on-premise). Couvre le
-**déploiement**, le **maintien opérationnel** (healthchecks, backups planifiés,
-TLS auto) et la **scalabilité** (HPA réglé par tier).
+## Cœur d'AISIA (identité produit)
+
+AISIA est le **chef d'orchestre IA local-first** : une requête entre, le meilleur modèle (local ou cloud) exécute, la réponse sort traçable et gouvernée.
+
+**Fonction première** : orchestrer chaque requête IA en **local-first** (Ollama sur cluster)
+puis cloud si nécessaire — via `BanditRouter`, pas un simple reverse-proxy.
+
+**Différenciation** : orchestration local-first — pas un proxy LLM stateless.
+
+| vs proxy LLM | AISIA |
+|--------------|-------|
+| 1 provider fixe | **87** providers + **58** modèles locaux |
+| Stateless | Qdrant + audit AI Act + multi-tenant |
+| SaaS opaque | Déployable Swarm/K8s — **v6.12.23** LIVE |
+
+Documentation : [README racine](../../../../README.md) ·
+[Product Identity](../../../../specification/03-Project-State/Product-Identity-AISIA.md)
+
+```mermaid
+flowchart LR
+  App[Application] --> AISIA[AISIA orchestration]
+  AISIA --> Local[Ollama local]
+  AISIA --> Cloud[Providers cloud]
+```
+
+
+---
+<!-- GENERATED:09_publications:end -->
 
 ## À propos d'AISIA
 
