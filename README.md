@@ -8,7 +8,7 @@
 
 # terraform-aisia-cluster
 
-> **v6.12.42** — module cœur — déployer AISIA sur Kubernetes existant
+> **v6.12.45** — module cœur — déployer AISIA sur Kubernetes existant
 
 ## Cœur d'AISIA (identité produit)
 
@@ -23,7 +23,7 @@ puis cloud si nécessaire — via `BanditRouter`, pas un simple reverse-proxy.
 |--------------|-------|
 | 1 provider fixe | **88** providers + **58** modèles locaux |
 | Stateless | Qdrant + audit AI Act + multi-tenant |
-| SaaS opaque | Déployable Swarm/K8s — **v6.12.42** LIVE |
+| SaaS opaque | Déployable Swarm/K8s — **v6.12.45** LIVE |
 
 Documentation : [README racine](../../../../README.md) ·
 [Product Identity](../../../../specification/03-Project-State/Product-Identity-AISIA.md)
@@ -61,7 +61,7 @@ module "aisia" {
   source  = "aisia-foundation/cluster/aisia"
   version = "~> 1.0"
 
-  image_tag          = "v6.12.42"
+  image_tag          = "v6.12.45"
   domain             = "client.aisia.fr"
   tier               = "saas"     # free | saas | baas | paas
   enable_autoscaling = true
@@ -87,7 +87,7 @@ Le `tier` dérive les bornes HPA par défaut (surcharge possible via
 
 | Nom | Type | Défaut | Description |
 |-----|------|--------|-------------|
-| `image_tag` | string | — (requis) | Tag d'image AISIA (ex. `v6.12.42`) |
+| `image_tag` | string | — (requis) | Tag d'image AISIA (ex. `v6.12.45`) |
 | `namespace` | string | `aisia` | Namespace cible |
 | `create_namespace` | bool | `true` | Créer le namespace |
 | `image_registry` | string | `registry.aisia.fr` | Registry des images |
@@ -143,4 +143,4 @@ MPL-2.0 — voir [LICENSE](./LICENSE).
 - **Référence API** : [api.aisia.fr/docs](https://api.aisia.fr/docs)
 - **Provider Terraform** : [aisia-foundation/aisia](https://registry.terraform.io/providers/aisia-foundation/aisia/latest/docs)
 - **Guide d'implémentation** : [getting-started](https://registry.terraform.io/providers/aisia-foundation/aisia/latest/docs/guides/getting-started)
-- **Version LIVE** : **v6.12.42**
+- **Version LIVE** : **v6.12.45**
