@@ -2,6 +2,30 @@
 
 Format : [Keep a Changelog](https://keepachangelog.com/) · Versioning : SemVer.
 
+## [Unreleased] — correction pré-publication (2026-08-05)
+
+### Fixed
+- `VERSION` rétabli à `6.12.80` (dernière version AISIA **certifiée LIVE**, DEPLOY-REPORT
+  all-green — `project_facts.json:prod_live_version`) ; gate `run_terraform_modules_gate`
+  de nouveau vert. `image_tag` n'a pas de `default` sur ce module (variable requise
+  explicite, pas de valeur implicite risquée) — la description avait déjà été corrigée
+  vers « ex. v6.12.80 » par le commit `8d818d7826e` (après une dérive vers « ex. v6.12.81 »
+  introduite par `5a5ab47fa`). Voir les CHANGELOG des modules per-cloud pour le défaut
+  fonctionnel plus grave (`image_tag` default = v6.12.81) corrigé dans cette même session.
+  ⚠️ **registry.terraform.io a déjà ingéré une version `6.12.81` immuable** — cette
+  correction locale ne la retire pas ; à republier dans une future version.
+
+## [6.12.80] — 2026-08-05
+
+### Changed
+- Entrée rétroactive : VERSION module -> `6.12.80` (release AISIA v6.12.80 LIVE,
+  DEPLOY-REPORT all-green). Aucun changement fonctionnel.
+
+## [6.12.79] — 2026-08-04
+
+### Changed
+- Entrée rétroactive : VERSION module -> `6.12.79`. Aucun changement fonctionnel.
+
 ## [6.12.78] — 2026-08-04
 
 ### Changed
