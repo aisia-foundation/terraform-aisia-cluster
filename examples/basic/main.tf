@@ -20,7 +20,7 @@ provider "helm" {
 module "aisia" {
   source = "../../"
 
-  image_tag = "v6.13.1"
+  image_tag = "v6.13.10"
   domain    = "client.aisia.fr"
   tier      = "saas"
 
