@@ -22,7 +22,7 @@ variable "image_registry" {
 }
 
 variable "image_tag" {
-  description = "Tag d'image AISIA à déployer (ex. v6.13.19)."
+  description = "Tag d'image AISIA à déployer (ex. v6.14.1)."
   type        = string
 }
 
