@@ -61,7 +61,7 @@ Publié sur le Terraform Registry sous `terraform-kubernetes-aisia`.
 ```hcl
 module "aisia" {
   source  = "aisia-foundation/cluster/aisia"
-  version = "~> 1.0"
+  version = "6.14.1"
 
   image_tag          = "v6.14.1"
   domain             = "client.aisia.fr"
